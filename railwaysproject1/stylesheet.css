@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+}
+
+.navigation {
+  margin-bottom: 2em;
+  border-radius: 0;
+}
+
+.index-page {
+  background: url('../images/railway.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.trainSearch {
+  border-radius: 5px;
+  background: white;
+  padding: 2em;
+  z-index: 100000;
+}
+
+.rail_icon {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.selectedTrainInfo, .travellerDetailsForm {
+  width: 100%;
+}
+
+.trainInfo {
+  border: 1px solid black;
+  padding: 2em;
+  border-radius: 5px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.mouseCursor {
+  cursor: pointer;
+}
+
+#selectedTrainInfo {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+#travellerInfo, #paymentInfo {
+  border-radius: 5px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.buttonText:hover, .buttonText:active, .buttonText:visited {
+  text-decoration: none;
+}

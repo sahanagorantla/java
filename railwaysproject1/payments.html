@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Railways Project</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="./assets/stylesheets/stylesheet.css" type="text/css"> -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+    <style>
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100vh;
+}
+
+.navigation {
+	margin-bottom: 2em;
+	border-radius: 0;
+}
+
+.index-page {
+	background: url('./railway.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.trainSearch {
+	border-radius: 5px;
+	background: white;
+	padding: 2em;
+	z-index: 100000;
+}
+
+.rail_icon {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.selectedTrainInfo, .travellerDetailsForm {
+	width: 100%;
+}
+
+.trainInfo {
+	border: 1px solid black;
+	padding: 2em;
+	border-radius: 5px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.mouseCursor {
+	cursor: pointer;
+}
+
+#selectedTrainInfo {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+	border-radius: 5px;
+	margin-bottom: 1em;
+}
+
+#travellerInfo, #paymentInfo {
+	border-radius: 5px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.buttonText:hover, .buttonText:active, .buttonText:visited {
+	text-decoration: none;
+}
+</style>
+    
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark navigation">
+    <a href="./index.html" class="navbar-brand">Railways Project</a>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="offset-md-1 col-md-10">
+        <p class="h4 display-4">Trip Summary</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-md-1 col-md-10">
+        <div class="accordion" id="accordionExample">
+          <div class="card" id="selectedTrainInfo">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  Selected Train Details
+                </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon
+                officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+                3 wolf
+                moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                Nihil anim
+                keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                excepteur
+                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                probably
+                haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="travellerInfo">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                  aria-expanded="false" aria-controls="collapseTwo">
+                  Traveller Details
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                <form class="travellerDetailsForm">
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputFirstName">First Name</label>
+                      <input type="text" class="form-control" id="inputFirstName">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputLastName">Last Name</label>
+                      <input type="text" class="form-control" id="inputLastName">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmailID">Email ID</label>
+                      <input type="text" class="form-control" id="inputEmailID">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputMobileNumber">Mobile Number</label>
+                      <input type="text" class="form-control" id="inputMobileNumber">
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="paymentInfo">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                  aria-expanded="false" aria-controls="collapseThree">
+                  Payment Details
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <form>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCardNumber">Card Number</label>
+                      <input type="text" class="form-control" id="inputCardNumber">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="inputExpiryDate">Expiry Date</label>
+                      <input type="text" class="form-control" id="inputExpiryDate">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="inputCVV">CVV</label>
+                      <input type="text" class="form-control" id="inputCVV">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="inputCardName">Name on Card</label>
+                      <input type="text" class="form-control" id="inputCardName">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress">Billing Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress2">Billing Address Line 2</label>
+                    <input type="text" class="form-control" id="inputAddress2"
+                      placeholder="Apartment, studio, or floor">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCity">City</label>
+                      <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputState">State</label>
+                      <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="inputZip">Zip</label>
+                      <input type="text" class="form-control" id="inputZip">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

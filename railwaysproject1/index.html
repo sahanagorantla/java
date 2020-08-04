@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Railways Project</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<!--  <link rel="stylesheet" href="stylesheet.css" type="text/css">-->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+	crossorigin="anonymous"></script>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100vh;
+}
+
+.navigation {
+	margin-bottom: 2em;
+	border-radius: 0;
+}
+
+.index-page {
+	background: url('./railway.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.trainSearch {
+	border-radius: 5px;
+	background: white;
+	padding: 2em;
+	z-index: 100000;
+}
+
+.rail_icon {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.selectedTrainInfo, .travellerDetailsForm {
+	width: 100%;
+}
+
+.trainInfo {
+	border: 1px solid black;
+	padding: 2em;
+	border-radius: 5px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.mouseCursor {
+	cursor: pointer;
+}
+
+#selectedTrainInfo {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+	border-radius: 5px;
+	margin-bottom: 1em;
+}
+
+#travellerInfo, #paymentInfo {
+	border-radius: 5px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.buttonText:hover, .buttonText:active, .buttonText:visited {
+	text-decoration: none;
+}
+</style>
+</head>
+
+<body class="index-page">
+	<nav class="navbar navbar-dark bg-dark navigation">
+		<a href="login" class="navbar-brand">Railways Project</a>
+		<!-- <form class="form-inline" action="/traindetails">
+			<label class="sr-only" for="loginUsername">UserName</label> <input
+				type="text" class="form-control mb-2 mr-sm-2" id="loginUsername"
+				placeholder="Username"> <label class="sr-only"
+				for="loginPassword">Password</label>
+			<div class="input-group mb-2 mr-sm-2">
+				<input type="password" class="form-control" id="loginPassword"
+					placeholder="Password">
+			</div>
+
+			<button type="submit" class="btn btn-primary mb-2">Sign In</button>
+		</form> -->
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="offset-md-1 col-md-4 trainSearch">
+				<div class="text-center">
+					<img src="./rail_icon.png" alt="Rail Icon">
+				</div>
+				<div class="searchTrainsForm">
+					<form action="./trainsList.html">
+						<div class="form-group">		
+							<label for="fromStation">From Station</label> <select
+								class="form-control" id="fromStation">
+								
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="toStation">To Station</label> <select
+								class="form-control" id="toStation">
+								
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="journeyDate">Journey Date</label>
+							 <input type="date"
+								class="form-control" id="journeyDate">
+						</div>
+						<div class="form-group">
+							<label for="trainClasses">Select the Class</label> <select
+								class="form-control" id="trainClasses">
+								
+							</select>
+						</div>
+						<button type="submit" class="btn btn-primary">Find Trains</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
